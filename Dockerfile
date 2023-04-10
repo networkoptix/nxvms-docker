@@ -1,4 +1,4 @@
-# Copyright 2018-present Network Optix, Inc. Licensed under MPL 2.0: www.mozilla.org/MPL/2.0/
+## Copyright 2018-present Network Optix, Inc. Licensed under MPL 2.0: www.mozilla.org/MPL/2.0/
 
 FROM ubuntu:20.04
 LABEL maintainer "Network Optix <support@networkoptix.com>"
