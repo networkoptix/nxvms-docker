@@ -27,6 +27,10 @@ to run containers with --restart options.
 issues in future releases.
 *  Any support provided implies knowledge and skills of Docker when using this feature.
 
+## Usage ##
+
+The latest image is available at Nx registry at _harbor.nxvms.dev/nxvms/metavms-server_.
+
 ## Building ##
 
 Building an image from current directory
