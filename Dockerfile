@@ -23,6 +23,7 @@ RUN apt-get update && \
         apt-utils \
         binutils \
         curl \
+        jq \
         "/opt/mediaserver/package/${MEDIASERVER_DEB##*/}" && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
