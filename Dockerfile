@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 LABEL maintainer "Network Optix <support@networkoptix.com>"
 
 # VMS Server debian package file or URL.
-ARG MEDIASERVER_DEB=https://updates.networkoptix.com/metavms/37133/linux/metavms-server-5.1.0.37133-linux_x64.deb
+ARG MEDIASERVER_DEB=https://updates.networkoptix.com/metavms/38363/linux/metavms-server-5.1.3.38363-linux_x64.deb
 
 # VMS Server user and directory name.
 ARG COMPANY="networkoptix-metavms"
