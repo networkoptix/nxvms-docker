@@ -14,17 +14,16 @@ ENV COMPANY=${COMPANY}
 # Disable EULA dialogs and confirmation prompts in installers.
 ENV DEBIAN_FRONTEND noninteractive
 
-# Copy the .deb file into the container.
-ADD "${MEDIASERVER_DEB}" /opt/mediaserver/package/
-
 # Install packages.
 RUN apt-get update && \
     apt-get install -y \
         apt-utils \
         binutils \
         curl \
-        jq \
-        "/opt/mediaserver/package/${MEDIASERVER_DEB##*/}" && \
+        jq && \
+    curl -O "${MEDIASERVER_DEB}" && \
+    apt-get install -y ./"${MEDIASERVER_DEB##*/}" && \
+    rm "${MEDIASERVER_DEB##*/}" && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
