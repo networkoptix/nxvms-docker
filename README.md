@@ -29,7 +29,7 @@ issues in future releases.
 
 ## Usage ##
 
-The latest image is available at Nx registry at _harbor.nxvms.dev/nxvms/metavms-server_.
+The latest image is available at [Nx registry](https://harbor.nxvms.dev/harbor/projects/3/repositories/metavms-server/artifacts-tab?publicAndNotLogged=yes).
 
 ## Building ##
 
