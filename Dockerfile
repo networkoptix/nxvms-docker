@@ -1,6 +1,6 @@
 ## Copyright 2018-present Network Optix, Inc. Licensed under MPL 2.0: www.mozilla.org/MPL/2.0/
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 LABEL maintainer "Network Optix <support@networkoptix.com>"
 
 # VMS Server debian package file or URL.
@@ -23,6 +23,7 @@ RUN apt-get update && \
         jq && \
     curl -O "${MEDIASERVER_DEB}" && \
     apt-get install -y ./"${MEDIASERVER_DEB##*/}" && \
+    chattr -i /lib/systemd/systemd-coredump && \
     rm "${MEDIASERVER_DEB##*/}" && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
