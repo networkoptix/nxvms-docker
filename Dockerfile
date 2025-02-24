@@ -1,7 +1,7 @@
 ## Copyright 2018-present Network Optix, Inc. Licensed under MPL 2.0: www.mozilla.org/MPL/2.0/
 
 FROM ubuntu:22.04
-LABEL maintainer "Network Optix <support@networkoptix.com>"
+LABEL maintainer="Network Optix <support@networkoptix.com>"
 
 # VMS Server debian package file or URL.
 ARG MEDIASERVER_DEB=https://updates.networkoptix.com/metavms/39873/linux/metavms-server-6.0.1.39873-linux_x64.deb
@@ -12,7 +12,7 @@ ARG COMPANY="networkoptix-metavms"
 ENV COMPANY=${COMPANY}
 
 # Disable EULA dialogs and confirmation prompts in installers.
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install packages.
 RUN apt-get update && \
