@@ -1,6 +1,7 @@
 ## Copyright 2018-present Network Optix, Inc. Licensed under MPL 2.0: www.mozilla.org/MPL/2.0/
 
-FROM ubuntu:22.04
+ARG BASE_IMAGE=ubuntu:22.04
+FROM $BASE_IMAGE
 LABEL maintainer="Network Optix <support@networkoptix.com>"
 
 # VMS Server debian package file or URL.
