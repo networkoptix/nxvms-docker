@@ -29,3 +29,4 @@ services:
     command: ["/opt/${COMPANY}/mediaserver/bin/root-tool"]
     volumes:
       - ${VOLUMES_PATH}/tmp:/tmp
+      - ${VOLUMES_PATH}/recordings:/recordings
