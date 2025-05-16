@@ -32,6 +32,8 @@ RUN apt-get update && \
 # Fix permissions.
 RUN chown ${COMPANY}: /opt/${COMPANY}/mediaserver/var/
 
+RUN echo "currentOsVariantOverride=docker" >> /opt/${COMPANY}/mediaserver/etc/mediaserver.conf
+
 ADD entrypoint.sh /opt/mediaserver/
 
 USER ${COMPANY}
