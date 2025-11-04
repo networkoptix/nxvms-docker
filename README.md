@@ -51,7 +51,7 @@ Review [build environment configuration](.env). Build image:
 docker-compose build
 ```
 
-### Volumes description: ###
+### Volumes description ###
 The included docker-compose.yaml file provisions one storage location for the video. If more storage
 locations are required, additional volumes should be provisioned to the container. These need to be
 separate volumes on the host as well.
@@ -87,7 +87,7 @@ chown 999:999 -R /srv/mediaserver
 docker-compose up -d
 ```
 
-# Clean up.
+# Clean up
 ```bash
 # Stop services and remove containers.
 docker-compose down
