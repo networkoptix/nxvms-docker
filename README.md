@@ -78,6 +78,8 @@ docker-compose down
 # Remove state volumes.
 rm -rf /srv/mediaserver
 ```
+## Storage ##
+
 ### Volumes description ###
 The included docker-compose.yaml file provisions one storage location for the video. If more storage
 locations are required, additional volumes should be provisioned to the container. These need to be
