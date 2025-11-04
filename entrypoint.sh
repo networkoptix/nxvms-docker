@@ -24,13 +24,7 @@ fi
 
 # No arguments provided, run the VMS Server.
 if [[ $# -lt 1 ]]; then
-    if [[ -x /opt/${COMPANY}/mediaserver/bin/mediaserver-bin ]]; then
-        echo "Launching mediaserver-bin for version < 4.3"
-        exec "/opt/${COMPANY}/mediaserver/bin/mediaserver-bin" -e
-    else
-        echo "Launching mediaserver"
-        exec "/opt/${COMPANY}/mediaserver/bin/mediaserver" -e
-    fi
+    exec "/opt/${COMPANY}/mediaserver/bin/mediaserver" -e
 fi
 
 # Argument(s) supplied, assume the user wants to run a different process, for example a `bash`
