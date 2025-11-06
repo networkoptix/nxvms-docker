@@ -39,7 +39,7 @@ issues in future releases.
 The latest image is available at [Nx registry](https://harbor.nxvms.dev/harbor/projects/3/repositories/metavms-server/artifacts-tab?publicAndNotLogged=yes).
 
 
-## Building ##
+## Build ##
 
 Building an image from current directory
 
@@ -51,24 +51,7 @@ Review [build environment configuration](.env). Build image:
 docker-compose build
 ```
 
-### Volumes description ###
-The included docker-compose.yaml file provisions one storage location for the video. If more storage
-locations are required, additional volumes should be provisioned to the container. These need to be
-separate volumes on the host as well.
-Volumes are required to configure the Sever and save its state data.
-
-| Default source mount location | Description               | Container mount point             |
-| ----------------------------- | ------------------------- | --------------------------------- |
-| /srv/mediaserver/entrypoind.d | User init scripts         | /opt/mediaserver/entrypoint.d     |
-| /srv/mediaserver/etc          | Configuration             | /opt/networkoptix/mediaserver/etc |
-| /srv/mediaserver/nx_ini       | Additional configuration  | /home/${COMPANY}/.config/nx_ini   |
-| /srv/mediaserver/recordings   | Video storage             | /recordings                       |
-| /srv/mediaserver/var          | State and logs            | /opt/networkoptix/mediaserver/var |
-| **TMPFS**           		| Unix socket and tmp files | /opt/networkoptix/mediaserver/tmp |
-
-The default location of the volumes is specified at [environment file](.env).
-
-## Running ##
+## Run ##
 
 If a host is already running a VMS Server in the traditional way, port setting have to be different
 for the container Server and the Server on a host. 
@@ -87,7 +70,7 @@ chown 999:999 -R /srv/mediaserver
 docker-compose up -d
 ```
 
-# Clean up
+## Cleanup ##
 ```bash
 # Stop services and remove containers.
 docker-compose down
@@ -95,8 +78,24 @@ docker-compose down
 # Remove state volumes.
 rm -rf /srv/mediaserver
 ```
+### Volumes description ###
+The included docker-compose.yaml file provisions one storage location for the video. If more storage
+locations are required, additional volumes should be provisioned to the container. These need to be
+separate volumes on the host as well.
+Volumes are required to configure the Sever and save its state data.
 
-### Notes about storage ###
+| Default source mount location | Description               | Container mount point             |
+| ----------------------------- | ------------------------- | --------------------------------- |
+| /srv/mediaserver/entrypoind.d | User init scripts         | /opt/mediaserver/entrypoint.d     |
+| /srv/mediaserver/etc          | Configuration             | /opt/networkoptix/mediaserver/etc |
+| /srv/mediaserver/nx_ini       | Additional configuration  | /home/${COMPANY}/.config/nx_ini   |
+| /srv/mediaserver/recordings   | Video storage             | /recordings                       |
+| /srv/mediaserver/var          | State and logs            | /opt/networkoptix/mediaserver/var |
+| **TMPFS**                     | Unix socket and tmp files | /opt/networkoptix/mediaserver/tmp |
+
+The default location of the volumes is specified at [environment file](.env).
+
+### Storage fs types support ###
 The Nx Media Server can operate with the following filesystems types:
 * vfat
 * ecryptfs
