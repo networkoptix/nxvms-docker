@@ -24,6 +24,7 @@ fi
 
 # No arguments provided, run the VMS Server.
 if [[ $# -lt 1 ]]; then
+    echo "Launching mediaserver"
     exec "/opt/${COMPANY}/mediaserver/bin/mediaserver" -e
 fi
 
