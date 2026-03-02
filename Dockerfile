@@ -17,6 +17,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install packages.
 RUN apt-get update && \
+    apt-get upgrade -y && \
     apt-get install -y \
         apt-utils \
         binutils \
