@@ -25,7 +25,6 @@ RUN apt-get update && \
         jq && \
     curl -O "${MEDIASERVER_DEB}" && \
     apt-get install -y ./"${MEDIASERVER_DEB##*/}" && \
-    chattr -i /lib/systemd/systemd-coredump && \
     rm "${MEDIASERVER_DEB##*/}" && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
