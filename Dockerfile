@@ -5,7 +5,7 @@ FROM $BASE_IMAGE
 LABEL maintainer="Network Optix <support@networkoptix.com>"
 
 # VMS Server debian package file or URL.
-ARG MEDIASERVER_DEB=https://updates.networkoptix.com/metavms/39873/linux/metavms-server-6.0.1.39873-linux_x64.deb
+ARG MEDIASERVER_DEB=https://updates.networkoptix.com/metavms/42921/linux/metavms-server-6.1.2.42921-linux_x64.deb
 
 # VMS Server user and directory name.
 ARG COMPANY="networkoptix-metavms"
